@@ -1,0 +1,64 @@
+
+  body,div,span,header,button,footer,img,li,dl,ul,ol,section,a,i,button,aside,form,input,p,h1,h2,h3,h4,select,option,article,figure,figcaption,table,tr,td,th,thead,tfoot,tbody{
+  	padding:0;
+  	margin:0;
+    border:0;
+  	list-style:none;
+    font-size: 14px;
+    outline: none;
+  }
+  body,html{
+  	width:100%;
+    height:100%;
+    background-color:#fff;
+  }
+  body{
+  	font-size:14px;
+  	color:#0D1217;
+  	font-family:"微软雅黑";
+  }
+  a{
+  	text-decoration:none;
+  	color:#ff8245;
+    cursor:pointer;
+  }
+  button,select,input,textarea{
+    outline:none;
+    cursor:pointer;
+    border:1px solid #ccc;
+  }
+  img{
+  	display:block;
+    border:0;
+  }
+  .w{
+    width:1200px;
+    margin:0 auto;
+  }
+  h1,h2{
+  	color:#000;
+  	font-size:16px;
+    font-weight:100;
+  }
+  h3,h4{
+  	color:#000;
+  	font-size:14px;
+    font-weight:100;
+  }
+  h5,h6{
+  	color:#d1d2d5;
+  	font-size:12px;
+    font-weight:100;
+  }
+  .l{
+    float:left;
+  }
+  .r{
+    float:right;
+  }
+  .i-left{
+    float:left!important;
+  }
+  .i-right{
+    float:right!important;
+  }
