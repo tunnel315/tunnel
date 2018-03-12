@@ -1,0 +1,4 @@
+var configIp = {
+  publicAPI       : '',
+  nativeUrl      : ''
+}
