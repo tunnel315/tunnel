@@ -44,6 +44,7 @@ function _api_base(method, url, params) {
           if(!res){
             reject(err);
           };
+          console.log(res)
           if (res.body){
               if(res.body.status && res.body.status!=200){
                 console.log(res.body);

@@ -4,9 +4,11 @@ const
     path = require('path'),
     os = require('os'),
     Koa = require('koa'),
+    cors = require('koa-cors'),//跨域处理模块
     mount = require('koa-mount'), //路由模块
     staticServer = require('koa-static'), //静态资源管理
     bodyParser = require('koa-bodyparser'),
+    koaBody = require('koa-body'),
     logger = require('./public/logger'),//日志模块
     multer = require('koa-multer'),//文件上传模块
     allRouter = require('./routers/allRoute.js');//路由中转站
@@ -31,6 +33,9 @@ if (process.env.NODE_ENV == 'development') {//开发环境下webpack配置
 }
 
 // app.use(async logger.useLog());
+
+app.use(koaBody());
+app.use(cors());
 
 app.use(bodyParser());//参数解析
 app.use(staticServer(path.join(__dirname, './../dist')));//静态资源

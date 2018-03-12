@@ -24,12 +24,12 @@ router.get('/mockPagination', async (ctx,next) => {
 		{id:1,name:'小王',sex:'男',age:'18'}
 	];
 	resBody.list = list;
-	ctx.body = resBody;
+	ctx.body = JSON.stringify(resBody);
 });
 router.post('/login', async (ctx,next) => {
 	let resText = resBody;
 		resText.data.token = '123456789';
-	ctx.body = resText;
+	ctx.body = JSON.stringify(resText);
 });
 router.post('/logout', async (ctx,next) => {
 	ctx.body = resBody
