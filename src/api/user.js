@@ -4,15 +4,17 @@
  */
 
 import superAgent from '../assets/js/http/superAgentPro';
+import axios from '../assets/js/http/myAxios.js';
 
 export function login (param) {//登录
-    return superAgent.post('/mock/login',param)
+	
+    return axios.post('/mock/login',param)
 }
 
 export function getUserInfo (param) {//获取用户信息
-    return superAgent.get('/mock/getUserInfoTest',param)
+    return axios.get('/mock/getUserInfoTest',param)
 }
 
 export function logout () {//退出登录
-    return superAgent.post('/mock/logout',{})
+    return axios.post('/mock/logout',{})
 }

@@ -16,6 +16,7 @@ const
 let app =new Koa();
 
 if (process.env.NODE_ENV == 'development') {//开发环境下webpack配置
+    console.log(1)
 	let webpack = require('webpack');
 	let compile = webpack(require('../webpack.config.js'));
 	let koaWM = require('koa-webpack-middleware');

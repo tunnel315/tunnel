@@ -14,7 +14,8 @@ let resBody = {
 
 
 router.get('/', async (ctx,next) => {
-	ctx.body = {a:'mock'}
+	ctx.type = 'application/json; charset=utf-8';
+	ctx.body =JSON.stringify({a:'mock'}); 
 });
 router.get('/mockPagination', async (ctx,next) => {
 	let list = [
@@ -24,11 +25,13 @@ router.get('/mockPagination', async (ctx,next) => {
 		{id:1,name:'小王',sex:'男',age:'18'}
 	];
 	resBody.list = list;
+	ctx.type = 'application/json; charset=utf-8';
 	ctx.body = JSON.stringify(resBody);
 });
 router.post('/login', async (ctx,next) => {
 	let resText = resBody;
 		resText.data.token = '123456789';
+	ctx.type = 'application/json; charset=utf-8';
 	ctx.body = JSON.stringify(resText);
 });
 router.post('/logout', async (ctx,next) => {
@@ -41,7 +44,9 @@ router.get('/getUserInfo', async (ctx,next) => {
 			name   : '管理员',
 			avatar : 'head',
 		}
-	ctx.body = resText
+		ctx.type = 'application/json; charset=utf-8';
+		console.log(resText)
+	ctx.body = JSON.stringify(resText);
 });
 router.get('/getUserInfoTest', async (ctx,next) => {
 	let resText = resBody;
@@ -50,7 +55,8 @@ router.get('/getUserInfoTest', async (ctx,next) => {
 			name   : '管理员',
 			avatar : 'head',
 		}
-	ctx.body = resText
+		ctx.type = 'application/json; charset=utf-8';
+	ctx.body = JSON.stringify(resText);
 });
 
 module.exports = router;

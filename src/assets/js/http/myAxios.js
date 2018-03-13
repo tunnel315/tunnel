@@ -7,18 +7,26 @@
 import axios from 'axios'
 import { Message, MessageBox, Loading } from 'element-ui'
 
+function toType(obj){//判断元素类型
+  return ({}).toString.call(obj).match(/\s([a-zA-Z]+)/)[1].toLowerCase()
+}
+
 function filter_null(o) {//过滤空参数
+
     for (var key in o) {
       if (o[key] == null) {
           delete o[key]
       }
+
       if (toType(o[key]) == 'string') {
           o[key] = o[key].trim()
           if (o[key].length == 0) {
             delete o[key]
           }
       }
+
     }
+
     return o
 }
 

@@ -11,12 +11,11 @@ const configEntry = {};
 nameArr.forEach((page) => {
 	configEntry[page] = [//配置每一个入口文件
 		"babel-polyfill",//ES6语法兼容
-		'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',//热刷新
 		path.resolve(pathArr.entryPath,`${page}/main.js`)
 	];
-	// process.env.NODE_ENV === 'develoment' && configEntry[page].unshift(...[
-  //
-	// ])
+	process.env.NODE_ENV === 'develoment' && configEntry[page].unshift(...[
+  	
+	])
 });
 
 module.exports = configEntry;
